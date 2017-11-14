@@ -2,6 +2,7 @@ package br.com.ufc.jdbcteste;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Locale; 
 
 import br.com.ufc.jdbcteste.pojo.*;
 import br.com.ufc.jdbcteste.dao.*;
@@ -17,6 +18,7 @@ public class Main {
 
 		int option;
 		Scanner scanner = new Scanner(System.in);
+		scanner.useLocale(Locale.ENGLISH);
 		boolean end = false;
 
 		while(!end) {
@@ -106,6 +108,23 @@ public class Main {
 					System.out.println(aloc.getUsuario().getNome() + " alocou o livro " + aloc.getLivro().getTitulo());
 				}
 				break;
+			}case 7:{
+				/**
+				 * 
+				 * Este caso é apenas para testes.
+				 * 
+				 */
+				System.out.println("aaaa");
+				double val1 = scanner.nextDouble();
+				double val2 = scanner.nextDouble();
+				System.out.println(val1 + " e " + val2);
+				
+				int i1 = scanner.nextInt();
+				int i2 = scanner.nextInt();
+				scanner.nextLine();//Pega o que tiver no buffer. no caso, uma quebra de linha
+				String value = scanner.nextLine();
+				System.out.println(value + " = " + i1 + ", " + i2);
+				
 			}default:
 				end = true;
 				break;
